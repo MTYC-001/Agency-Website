@@ -1,0 +1,171 @@
+.App {
+  position: relative;
+  perspective: 800px;
+}
+/*Header*/
+.logo{
+  width: 200px;
+  margin-top: 80px;
+}
+.branding-slide {
+  position: relative;
+  height: 700px;
+  background-color: black;
+}
+
+
+/*rotating circles*/
+.ovalX,
+.ovalY {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 120vmin;
+  height: 90vmin;
+  border-radius: 50%;
+  border: 2px solid white;
+  animation-duration: 4s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.ovalX {
+  animation: rotateX 8s linear infinite;
+}
+
+.ovalY {
+  animation: rotateY 8s linear infinite;
+}
+
+.normal {
+  animation-direction: normal;
+}
+
+.reverse {
+  animation-direction: reverse;
+}
+
+@keyframes rotateX {
+  0% {
+    transform: translate(-50%, -50%) rotateX(0deg) rotateY(180deg);
+  }
+  75% {
+    transform: translate(-50%, -50%) rotateX(180deg) rotateY(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotateX(180deg) rotateY(0deg);
+  }
+}
+
+@keyframes rotateY {
+  0% {
+    transform: translate(-50%, -50%) rotateX(180deg) rotateY(deg);
+  }
+  65% {
+    transform: translate(-50%, -50%) rotateX(0deg) rotateY(180deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotateX(0deg) rotateY(180deg);
+  }
+}
+/*Slider*/
+
+.carousel {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sentence {
+  display: inline-block;
+  white-space: nowrap;
+  animation: slide-infinite 95s linear infinite;
+  color: white;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 100px;
+  opacity: 0;
+  margin-bottom: 400px;
+  color: yellow;
+}
+
+@keyframes slide-infinite {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  10%, 90% {
+    opacity: 1;
+  }
+  50% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+}
+
+
+
+.sentence2 {
+  display: absolute;
+  white-space: nowrap;
+  animation: slide-opposide 100s linear infinite;
+  color: white;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 100px;
+  opacity: 0;
+  margin-top: 200px;
+  color: orange;
+}
+@keyframes slide-opposide {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  10%, 90% {
+    opacity: 1;
+  }
+  50% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+
+}
+/*********************************************************************************/
+.header{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  background-color: black;
+}
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
