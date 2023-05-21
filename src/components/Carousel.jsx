@@ -29,7 +29,7 @@ const Carousel = () => {
 
   return (
     <div className="carousel" ref={carouselRef}>
-      <div className="sentence">WE'RE BRANDS AND <br/>WE BELIEVE IN</div>
+      <div className="sentence">WE'RE BRANDS <br/> AND <br/> WE BELIEVE IN</div>
       <div className="sentence2">QUALITY <br/> OVER QUANTITY</div>
     </div>
   );

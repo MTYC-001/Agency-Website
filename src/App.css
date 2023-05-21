@@ -1,6 +1,7 @@
 .App {
   position: relative;
   perspective: 800px;
+  background-color: black;
 }
 /*Header*/
 .logo{
@@ -9,7 +10,8 @@
 }
 .branding-slide {
   position: relative;
-  height: 700px;
+  height: 900px;
+  margin-bottom: 100px;
   background-color: black;
 }
 
@@ -22,9 +24,9 @@
   left: 50%;
   transform: translate(-50%, -50%);
   width: 120vmin;
-  height: 90vmin;
+  height: 75vmin;
   border-radius: 50%;
-  border: 2px solid white;
+  border: 1px solid white;
   animation-duration: 4s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
@@ -83,13 +85,14 @@
 .sentence {
   display: inline-block;
   white-space: nowrap;
-  animation: slide-infinite 95s linear infinite;
+  animation: slide-infinite 120s linear infinite;
   color: white;
   font-family: 'Times New Roman', Times, serif;
   font-size: 100px;
   opacity: 0;
   margin-bottom: 400px;
-  color: yellow;
+
+  text-align: center;
 }
 
 @keyframes slide-infinite {
@@ -108,19 +111,16 @@
     opacity: 0;
   }
 }
-
-
-
 .sentence2 {
   display: absolute;
   white-space: nowrap;
-  animation: slide-opposide 100s linear infinite;
-  color: white;
+  animation: slide-opposide 120s linear infinite;
+  color: white;                             
   font-family: 'Times New Roman', Times, serif;
   font-size: 100px;
   opacity: 0;
   margin-top: 200px;
-  color: orange;
+  text-align: center;
 }
 @keyframes slide-opposide {
   0% {
@@ -169,3 +169,64 @@
     transform: rotate(360deg);
   }
 }
+/*BrandSlider*/
+/* Slider.css */
+
+.slider {
+  box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.125);
+  background-color: rgba(0, 0, 0, 0.5);
+  height: 100px;
+  margin: auto;
+  overflow: hidden;
+  position: relative;
+  width: 100%; /* Occupy the entire width of the website */
+
+  &:before,
+  &:after {
+    background: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 100%);
+    content: "";
+    height: 100px;
+    position: absolute;
+    width: 200px;
+    z-index: 2;
+  }
+
+  &:after {
+    right: 0;
+    top: 0;
+    transform: rotateZ(180deg);
+  }
+
+  &:before {
+    left: 0;
+    top: 0;
+  }
+
+  .slide-track {
+    animation: scroll 40s linear infinite;
+    display: flex;
+    width: calc(250px * 14);
+  }
+
+  .slide {
+    height: 100px;
+    width: 250px;
+  }
+}
+.slider .slide {
+  background-color: black; /* Set the background color to black */
+  /* The rest of the styles remain the same */
+  
+}
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-250px * 7));
+  }
+}
+
+
+
+
